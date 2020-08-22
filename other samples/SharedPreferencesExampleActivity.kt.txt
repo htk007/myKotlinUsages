@@ -1,0 +1,24 @@
+////////////// get sharedpreferences data //////////////
+
+package com.hasank.example
+
+class SharedPreferencesExampleActivity  : AppCompatActivity() {
+
+lateinit var  sharedPreferencesText: SharedPreferences
+
+ override fun onCreate(savedInstanceState: Bundle?) {
+
+ 	requestWindowFeature(Window.FEATURE_NO_TITLE)
+        super.onCreate(savedInstanceState)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        setContentView(R.layout.activity_sharedpref)
+ sharedPreferencesText =getSharedPreferences("SharedPref_text",android.content.Context.MODE_PRIVATE)
+var sharedTextNum = sharedPreferencesText.getInt("SharedTextNum",0)
+}
+
+}
+//////////////  set sharedpreferences data  //////////////
+
+ sharedPreferencesText.edit().putInt("SharedTextNum",5).apply()
