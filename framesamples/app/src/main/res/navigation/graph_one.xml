@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_one"
+    app:startDestination="@id/myFirstFragment">
+
+    <fragment
+        android:id="@+id/myFirstFragment"
+        android:name="com.hekasoftdesign.framesexample.navigationkullanimi.MyFirstFragment"
+        android:label="fragment_my_first"
+        tools:layout="@layout/fragment_my_first" >
+        <action
+            android:id="@+id/action_myFirstFragment_to_mySecondFragment"
+            app:destination="@id/mySecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mySecondFragment"
+        android:name="com.hekasoftdesign.framesexample.navigationkullanimi.MySecondFragment"
+        android:label="fragment_my_second"
+        tools:layout="@layout/fragment_my_second" >
+        <action
+            android:id="@+id/action_mySecondFragment_to_myFirstFragment"
+            app:destination="@id/myFirstFragment" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="HASAN" />
+    </fragment>
+</navigation>
